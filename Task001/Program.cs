@@ -5,7 +5,7 @@ void Palindrome()
     // Определяем входящее число
     Console.WriteLine("Введите пятизначное число: ");
     int num = int.Parse(Console.ReadLine());
-    //
+    // Определяем является ли число палиндромом
     int a = num/10000;
     int a1 = num%10;
     int b = num/1000%10;
