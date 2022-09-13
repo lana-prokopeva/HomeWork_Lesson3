@@ -1,17 +1,24 @@
 ﻿// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 
-void Cube()
+// Определяем значение чисел в кубе от 1 до N 
+int[] GetCubeNumers(int N)
 {
-    // Определяем входное число N
-    Console.WriteLine("Введите число: ");
-    int N = int.Parse(Console.ReadLine());
-    int num = 1;
-    // Определяем значение чисел в кубе от 1 до N
-    while(num <= N)
+    int[] cubeNumbers = new int[N];
+    for (int i = 1; i <= N; i++)
     {
-        int result = num*num*num;
-        Console.Write($"{result} ");
-        num++;
+        cubeNumbers [i - 1]  = i*i*i;
     }  
-   }
-Cube();
+    return cubeNumbers;
+}
+
+// Определяем входное число N
+Console.WriteLine("Введите число N: ");
+int N = int.Parse(Console.ReadLine());
+
+// Вносим получившиеся числа в массив
+int[] arrayCube = GetCubeNumers(N);
+for (int i = 0; i < arrayCube.Length; i++) 
+{
+    Console.Write($"{arrayCube[i]} ");
+}
+
